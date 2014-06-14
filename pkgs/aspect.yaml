@@ -3,8 +3,8 @@ dependencies:
   build: [dealii]
 
 sources:
-- url: http://geodynamics.org/cig/software/aspect/aspect-{{version}}.tar.gz
-  key: tar.gz:buaeghlsj2p3kccbv3jjlu33vk4mb2pc
+- url: https://github.com/geodynamics/aspect
+  key: git:21aac238409facd328313998aa9ab9dddb2f16a7
 
 build_stages:
 
