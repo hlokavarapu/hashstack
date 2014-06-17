@@ -21,8 +21,7 @@ build_stages:
   after: make
   handler: bash
   bash: |
-    mkdir ${ARTIFACT}/bin
-    cp ${BUILD}/_build/bin/* ${ARTIFACT}/bin
+    cp -r ${BUILD}/_build/bin ${ARTIFACT}
     cp -r ${BUILD}/examples ${ARTIFACT}
 
 #- name: postInstallation
