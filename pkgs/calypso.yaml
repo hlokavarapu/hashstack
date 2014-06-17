@@ -1,0 +1,35 @@
+extends: [cmake_package]
+dependencies:
+  build: [cmake, openmpi, hdf5]
+
+sources:
+ - url: https://github.com/geodynamics/calypso 
+   key: git:b2d8e2ada12746b2084fcd800b7603227bd10ea1
+
+build_stages:
+- name: configure
+  mode: override
+  extra: ['-D CMAKE_INSTALL_PREFIX:PATH=${ARTIFACT}',
+          '-D CMAKE_Fortran_COMPILER={{fortranCompiler}}',
+          '-D CMAKE_VERBOSE_MAKEFILE=ON',
+          '-D CMAKE_DISABLE_FIND_PACKAGE_FFTW:bool=yes']
+
+- name: install
+  mode: remove 
+
+- name: postMake
+  after: make
+  handler: bash
+  bash: |
+    mkdir ${ARTIFACT}/bin
+    cp ${BUILD}/_build/bin/* ${ARTIFACT}/bin
+    cp -r ${BUILD}/examples ${ARTIFACT}
+
+#- name: postInstallation
+#  after: postMake 
+#  handler: bash
+#  bash: |
+#    echo "export CALYPSO_HOME=\"${ARTIFACT}\"" >> ${HOME}/.bash_profile
+#    . ${HOME}/.bash_profile
+
+
