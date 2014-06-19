@@ -1,18 +1,21 @@
+#To install this package, we must specify the following parameters gitUrl and gitCommit within the software profile
+
 extends: [cmake_package]
 dependencies: 
   build: [dealii]
 
 sources:
-- url: https://github.com/geodynamics/aspect
-  key: git:21aac238409facd328313998aa9ab9dddb2f16a7
+- url: {{gitUrl}} 
+  key: git:{{gitCommit}} 
+#- url: https://github.com/geodynamics/aspect
+#  key: git:21aac238409facd328313998aa9ab9dddb2f16a7
 
 build_stages:
 
 - name: configure
   mode: override
   extra: ['-D DEAL_II_DIR=${DEALII_DIR}',
-          '-D CMAKE_INSTALL_PREFIX:PATH=${ARTIFACT}',
-          '-D CMAKE_BUILD_TYPE=Release']
+          '-D CMAKE_INSTALL_PREFIX:PATH=${ARTIFACT}']
 
 - name: install
   mode: remove
