@@ -3,8 +3,9 @@ dependencies:
   build: [cmake, openmpi, hdf5]
 
 sources:
- - url: https://github.com/geodynamics/calypso 
-   key: git:b2d8e2ada12746b2084fcd800b7603227bd10ea1
+ - url: {{gitUrl}}
+   rev: Hiro_latest
+   key: git:{{gitCommit}}
 
 build_stages:
 - name: configure
