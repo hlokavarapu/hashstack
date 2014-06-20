@@ -4,7 +4,6 @@ dependencies:
 
 sources:
  - url: {{gitUrl}}
-   rev: Hiro_latest
    key: git:{{gitCommit}}
 
 build_stages:
