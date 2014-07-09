@@ -1,0 +1,15 @@
+extends: [base_package]
+
+build_stages:
+- name: configure
+  after: prologue
+  handler: bash
+  bash: | 
+    ./configure FC={{fortranCompiler}}
+     
+- name: make
+  after: retrival
+  handler: bash
+  bash: |
+    make 
+
