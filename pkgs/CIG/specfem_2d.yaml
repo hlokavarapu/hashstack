@@ -8,7 +8,7 @@ build_stages:
     ./configure FC={{fortranCompiler}}
      
 - name: make
-  after: retrival
+  after: configure
   handler: bash
   bash: |
     make 
