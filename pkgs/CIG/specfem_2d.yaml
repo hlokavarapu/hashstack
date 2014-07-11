@@ -1,5 +1,9 @@
 extends: [base_package]
 
+sources:
+- url: https://github.com/Vandemar/specfem2d
+  key: git:e589f7e7191819193135822036d4af9fa33c2f59
+
 build_stages:
 - name: configure
   after: prologue
