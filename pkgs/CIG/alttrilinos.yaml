@@ -9,9 +9,9 @@ sources:
 build_stages:
 - name: configure
   mode: override
-  extra: ['-D CMAKE_CXX_COMPILER:PATH=${MPICXX}',
-          '-D CMAKE_C_COMPILER:PATH=${MPICC}',
-          '-D CMAKE_Fortran_COMPILER:PATH=${MPIF90}',
+  extra: ['-D CMAKE_CXX_COMPILER:PATH=/usr/bin/mpicxx',
+          '-D CMAKE_C_COMPILER:PATH=/usr/bin/mpicc',
+          '-D CMAKE_Fortran_COMPILER:PATH=/usr/bin/mpif90',
           '-D CMAKE_BUILD_TYPE:STRING=RELEASE',
           '-D CMAKE_CXX_FLAGS=-g -O3',
           '-D CMAKE_C_FLAGS=-g -O3',
