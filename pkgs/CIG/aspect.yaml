@@ -6,7 +6,7 @@ dependencies:
 
 sources:
 - url: {{gitUrl}} 
-  key: git:{{gitCommit}} 
+  key: {{gitCommit}} 
 #- url: https://github.com/geodynamics/aspect
 #  key: git:21aac238409facd328313998aa9ab9dddb2f16a7
 

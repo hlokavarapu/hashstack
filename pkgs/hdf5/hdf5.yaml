@@ -12,7 +12,7 @@ build_stages:
   before: configure
   handler: bash
   bash: |
-    export CC=${MPI_DIR}/bin/mpicc
+    export CC=${MPICC}
 
 - when: platform == 'Cygwin'
   files: [fix_get_console.patch]
