@@ -7,13 +7,6 @@ sources:
   key: tar.gz:f75irrdmjj5sfvczu72gibqy7ktow2jp
 
 build_stages:
-- name: set-cc-compiler
-  before: configure
-  handler: bash
-  bash: |
-    export CC=${MPICC}
-    export CXX=${MPICXX}
-
 - name: configure
   mode: override
   extra: ['-D CMAKE_CXX_COMPILER:PATH=${MPICXX}',
