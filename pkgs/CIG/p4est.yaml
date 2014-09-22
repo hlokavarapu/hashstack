@@ -1,6 +1,6 @@
 extends: [base_package]
 dependencies:
-  build: [openmpi]  
+  build: [mpi]  
 
 build_stages:
 - name: retrival
